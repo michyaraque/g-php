@@ -1,0 +1,21 @@
+{
+    "name": "michyaraque/g-php",
+    "description": "G-Earth Extension for PHP",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.4",
+        "ext-sockets": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "GPHP\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Michael Araque",
+            "homepage": "https://github.com/michyaraque/g-php"
+        }
+    ]
+}
