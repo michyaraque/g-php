@@ -24,6 +24,7 @@ $ext->intercept(Outgoing::Chat, function (HMessage $hMessage) use ($ext) {
     $text = $hPacket->readString();
     $hPacket->read('ii');
 
+    // Say :walkto X Y in the chat
     if (str_contains($text, ":walkto")) {
         [$_, $posx, $posy] = explode(" ", $text);
         $hMessage->setBlocked(true);
@@ -43,8 +44,8 @@ $ext->intercept(Outgoing::Chat, function (HMessage $hMessage) use ($ext) {
                 $packet->appendInt(1838264);
                 $packet->appendInt(8722);
                 $packet->appendString("");
-                $packet->appendInt(3);
-                $packet->appendInt(7);
+                $packet->appendInt(3); // X
+                $packet->appendInt(7); // Y
                 $packet->appendInt(0);
                 $packet->appendBool(false);
 
