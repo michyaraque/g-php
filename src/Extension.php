@@ -120,6 +120,7 @@ class Extension {
         $count = count($argv);
         for ($i = 0; $i < $count; $i++) {
             if ($argv[$i] === '-p' && isset($argv[$i + 1])) $this->args['port'] = (int)$argv[$i + 1];
+            if ($argv[$i] === '-h' && isset($argv[$i + 1])) $this->args['host'] = $argv[$i + 1];
             if ($argv[$i] === '-f' && isset($argv[$i + 1])) $this->args['file'] = $argv[$i + 1];
             if ($argv[$i] === '-c' && isset($argv[$i + 1])) $this->args['cookie'] = $argv[$i + 1];
         }

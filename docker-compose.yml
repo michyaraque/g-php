@@ -1,0 +1,8 @@
+services:
+  extension:
+    build: .
+    volumes:
+      - .:/app
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    command: php examples/extension-test.php -h host.docker.internal

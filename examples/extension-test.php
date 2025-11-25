@@ -1,6 +1,6 @@
 <?php
 
-require_once '../src/G.php';
+require_once __DIR__ . '/../src/G.php';
 
 use GPHP\Extension\{Extension, ExtensionInfo, HostInfo};
 use GPHP\Protocol\{HMessage, HPacket};
