@@ -115,3 +115,16 @@ Scheduler::run(function() use ($ext) {
 ### Packet Definitions
 
 Packet definitions (Enums) are automatically generated in `src/Packets.php` when the extension connects to G-Earth for the first time. This provides Intellisense support in your IDE.
+
+## Running with Docker (Sandboxed)
+
+You can run the extension inside a Docker container while still communicating with G-Earth.
+
+1.  Ensure Docker and Docker Compose are installed.
+2.  Run the extension:
+
+```bash
+docker-compose up --build
+```
+
+This uses `host.docker.internal` to connect to G-Earth running on your main OS.
