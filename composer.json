@@ -12,6 +12,9 @@
             "GPHP\\": "src/"
         }
     },
+    "files": [
+        "src/G.php"
+    ],
     "authors": [
         {
             "name": "Michael Araque",
