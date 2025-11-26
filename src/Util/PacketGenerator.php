@@ -25,22 +25,19 @@ class PacketGenerator {
             }
         }
 
+        self::writeEnum('Incoming', $incoming);
+        self::writeEnum('Outgoing', $outgoing);
+    }
+
+    private static function writeEnum(string $className, array $cases): void {
         $code = "<?php\n\ndeclare(strict_types=1);\n\nnamespace GPHP\\Packets;\n\n";
-
-        $code .= "enum Incoming: string {\n";
-        foreach ($incoming as $case => $value) {
-            $code .= "    case $case = '$value';\n";
-        }
-        $code .= "}\n\n";
-
-        $code .= "enum Outgoing: string {\n";
-        foreach ($outgoing as $case => $value) {
+        $code .= "enum $className: string {\n";
+        foreach ($cases as $case => $value) {
             $code .= "    case $case = '$value';\n";
         }
         $code .= "}\n";
 
-        $file = __DIR__ . '/../Packets.php';
-
+        $file = __DIR__ . "/../Packets/$className.php";
         file_put_contents($file, $code);
     }
 }
