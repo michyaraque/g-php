@@ -10,7 +10,7 @@ PHP extension API for the Habbo packet interceptor [G-Earth](https://github.com/
 ## Installation
 
 ```sh
-composer install michyaraque/gphp
+composer install michyaraque/g-php
 ```
 
 ## Usage
